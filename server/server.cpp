@@ -5,7 +5,7 @@ const int maxevents=5;
 static char buf[Maxline];
 
 //数据接受 buf
-#define recvlen 4096
+#define recvlen 4095
 char recvBuf[recvlen];
 struct epoll_event eventList[maxevents];
 
