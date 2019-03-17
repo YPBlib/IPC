@@ -13,11 +13,14 @@ server:	server/server.cpp
 client:	client/client.cpp
 	$(CXX) -I. $(CXX_FLAGS) client/client.cpp -o ./c.out
 pipe:	pipe.c
-	 $(CC) pipe.c -o pipe.out
+	$(CC) pipe.c -o pipe.out
 rdfifo.out:	rdfifo.c
-	 $(CC) $(C_FLAGS) rdfifo.c -o rdfifo.out
+	$(CC) $(C_FLAGS) rdfifo.c -o rdfifo.out
 wrfifo.out:	wrfifo.c
-	 $(CC) $(C_FLAGS) wrfifo.c -o wrfifo.out
+	$(CC) $(C_FLAGS) wrfifo.c -o wrfifo.out
+msg:	msgC.c msgS.c
+	$(CC) $(C_FLAGS) msgC.c -o msgc.out
+	$(CC) $(C_FLAGS) msgS.c -o msgs.out
 
 
 #all: $(TARGET)
