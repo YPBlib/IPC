@@ -5,8 +5,8 @@
 #include <sys/ipc.h>
 #include <fcntl.h>
 #include <sys/msg.h>
-#include <sys/sem.h>
 #include <sys/types.h>
+#include <sys/shm.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,19 +17,3 @@
 #define maxlen 4096
 char buf[maxlen];
 
-
-
-
-int main(int argc,char** argv)
-{
-    struct semid_ds ds;
-    struct sembuf sop;
-    union semun arg,dummy;
-    int semid,j;
-
-    semid=5;
-    arg.buf=&ds;
-    semctl(semid,0,IPC_STAT,arg);
-   
-    return 0;
-}

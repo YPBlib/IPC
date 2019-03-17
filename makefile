@@ -21,7 +21,9 @@ wrfifo.out:	wrfifo.c
 msg:	msgC.c msgS.c
 	$(CC) $(C_FLAGS) msgC.c -o msgc.out
 	$(CC) $(C_FLAGS) msgS.c -o msgs.out
-
+shm:	 semun.h shmC.c shmS.c
+	$(CC) $(C_FLAGS) -I. shmC.c -o shmc.out
+	$(CC) $(C_FLAGS) -I. shmS.c -o shms.out
 
 #all: $(TARGET)
 clean:
